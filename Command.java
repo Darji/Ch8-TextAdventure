@@ -13,8 +13,8 @@
  *
  * If the command had only one word, then the second word is <null>.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2011.08.10
+ * @author  Akash Darji
+ * @version Apr 2 2019
  */
 
 public class Command
@@ -33,7 +33,7 @@ public class Command
     {
         this.commandWord = commandWord;
         this.secondWord = secondWord;
-    }
+    }// end of Command
 
     /**
      * Return the command word (the first word) of this command.
@@ -42,7 +42,7 @@ public class Command
     public CommandWord getCommandWord()
     {
         return commandWord;
-    }
+    }// end of getCommandWord
 
     /**
      * @return The second word of this command. Returns null if there was no
@@ -51,7 +51,7 @@ public class Command
     public String getSecondWord()
     {
         return secondWord;
-    }
+    }// end of getSecondWord
 
     /**
      * @return true if this command was not understood.
@@ -59,7 +59,7 @@ public class Command
     public boolean isUnknown()
     {
         return (commandWord == CommandWord.UNKNOWN);
-    }
+    }// end of isUnknown
 
     /**
      * @return true if the command has a second word.
@@ -67,6 +67,6 @@ public class Command
     public boolean hasSecondWord()
     {
         return (secondWord != null);
-    }
-}
+    }// end of hasSecondWord
+}// end of class command
 

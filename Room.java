@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Random;
 
 /**
  * Class Room - a room in an adventure game.
@@ -12,15 +14,15 @@ import java.util.Iterator;
  * connected to other rooms via exits.  For each existing exit, the room 
  * stores a reference to the neighboring room.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2011.08.10
+ * @author  Akash Darji
+ * @version Apr 2 2019
  */
 
 public class Room 
 {
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
-
+    private ArrayList<Item> items;
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -31,7 +33,8 @@ public class Room
     {
         this.description = description;
         exits = new HashMap<String, Room>();
-    }
+        items = new ArrayList<>();
+    }// end of room
 
     /**
      * Define an exit from this room.
@@ -41,8 +44,18 @@ public class Room
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);
-    }
+    }// end of setExit
 
+    public void addItem(Item item){
+        items.add(item);
+    }// end of end of add Item
+    public String getItems(){
+        String result = "Items: ";
+        for (int a = 0; a < items.size(); a++) {
+            result += items.get(a).getDesc()+", ";
+        }// end of for
+        return result;
+    }// end of getItems
     /**
      * @return The short description of the room
      * (the one that was defined in the constructor).
@@ -50,7 +63,7 @@ public class Room
     public String getShortDescription()
     {
         return description;
-    }
+    }// end of getShortDiscp
 
     /**
      * Return a description of the room in the form:
@@ -60,8 +73,17 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n" + getExitString();
-    }
+        return "You are " + description + ".\n"+getItems()+"\n" + getExitString();
+    }// end of getLongDiscp
+    public String getAllItems()
+    {
+        String result = "Items In This Room:\n";
+        for (int a = 0; a < items.size(); a++) {
+            result += items.get(a)+"\n";
+        }// end of for
+        return result;
+    }// end of getAllItems
+    
 
     /**
      * Return a string describing the room's exits, for example
@@ -74,9 +96,9 @@ public class Room
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
             returnString += " " + exit;
-        }
+        }// end of for
         return returnString;
-    }
+    }// end of getExitString
 
     /**
      * Return the room that is reached if we go from this room in direction
@@ -87,6 +109,6 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
-    }
-}
+    }// end of getExit
+}// end of class room
 
