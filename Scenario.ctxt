@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Scenario
+comment0.text=\n\ @author\ \ Akash\ Darji\ \n\ @version\ Apr\ 22,\ 2019\n
+comment1.params=
+comment1.target=Scenario()
+comment1.text=\n\ Create\ a\ complete\ scenario\ (with\ all\ rooms).\n
+comment2.params=
+comment2.target=Room\ getStartRoom()
+comment2.text=\n\ Return\ the\ room\ where\ players\ start\ the\ game.\n
+comment3.params=
+comment3.target=Room\ getRandomRoom()
+comment3.text=\n\ Return\ a\ random\ room\ in\ this\ game.\n
+numComments=4

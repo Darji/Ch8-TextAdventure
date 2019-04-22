@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TransporterRoom
+comment0.text=\n\ @author\ \ Akash\ Darji\n\ @version\ Apr\ 22,\ 2019\n
+comment1.params=description\ scene
+comment1.target=TransporterRoom(java.lang.String,\ Scenario)
+comment1.text=\n\ Create\ a\ room\ \n
+comment2.params=
+comment2.target=java.lang.String\ getExitString()
+comment2.text=\n\ Describe\ the\ exits.\n
+comment3.params=direction
+comment3.target=Room\ getExit(java.lang.String)
+comment3.text=\n\ If\ there\ is\ no\ room\ in\ that\ direction,\ return\ null.\n
+numComments=4
